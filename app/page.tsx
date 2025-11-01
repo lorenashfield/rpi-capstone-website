@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import logo from "@/public/website_logo.png";
 
 const Section = ({ id, title, children }: { id: string; title: string; children: React.ReactNode }) => (
   <section id={id} className="scroll-mt-24 py-16 sm:py-24">
@@ -18,9 +19,17 @@ export default function Home() {
       {/* Top Nav */}
       <header className="sticky top-0 z-50 border-b border-gray-200 bg-white/95 backdrop-blur">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-          <Link href="#top" className="text-sm font-semibold tracking-tight text-gray-900">
-            RPi Companion Computer
-          </Link>
+        <Link href="#top" className="flex items-center gap-2 text-sm font-semibold tracking-tight text-gray-900">
+          <Image
+            src={logo}
+            alt="Project Logo"
+            width={36}
+            height={36}
+            className="rounded-sm"
+          />
+          RPi Companion Computer
+        </Link>
+
           <nav className="hidden gap-6 text-sm sm:flex text-gray-700">
             <a href="#overview" className="hover:text-sky-600 transition-colors">Overview</a>
             <a href="#specs" className="hover:text-sky-600 transition-colors">Interfaces</a>
@@ -38,7 +47,15 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
           <div className="max-w-3xl">
             <p className="text-[10px] sm:text-xs uppercase tracking-widest inline-flex items-center gap-2 rounded-full bg-sky-100 text-sky-700 ring-1 ring-sky-300 px-2 py-1">UCSB CE Capstone × AeroVironment</p>
-            <h1 className="mt-3 text-3xl sm:text-5xl font-semibold tracking-tight text-gray-900">
+            <h1 className="mt-3 flex items-center gap-3 text-3xl sm:text-5xl font-semibold tracking-tight text-gray-900">
+              <Image
+                src={logo}
+                alt="Project Logo"
+                width={100}
+                height={100}
+                className="inline-block rounded-sm"
+                unoptimized
+              />
               AeroVironment Integrated RPi Companion Computer
             </h1>
             <p className="mt-4 text-gray-700 text-base sm:text-lg">
